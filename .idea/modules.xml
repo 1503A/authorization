@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/JCC.iml" filepath="$PROJECT_DIR$/JCC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authorization.iml" filepath="$PROJECT_DIR$/authorization.iml" />
       <module fileurl="file://$PROJECT_DIR$/authorization.iml" filepath="$PROJECT_DIR$/authorization.iml" />
     </modules>
   </component>

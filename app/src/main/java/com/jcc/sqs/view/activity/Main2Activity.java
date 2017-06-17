@@ -15,6 +15,7 @@ import com.jcc.sqs.presenter.LoginPresenter;
 import com.jcc.sqs.presenter.MsgPresenter;
 import com.jcc.sqs.view.iview.LoginView;
 import com.jcc.sqs.view.iview.MsgView;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener,MsgView<MsgBean>,LoginView<LoginBean> {
 
@@ -49,6 +50,29 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
         bt_yzm.setOnClickListener(this);
         bt_login.setOnClickListener(this);
+
+
+        SlidingMenu menu = new SlidingMenu(this);
+//设置侧滑菜单的位置可选值LEFT , RIGHT , LEFT_RIGHT
+        menu.setMode(SlidingMenu.LEFT);
+// 设置触摸屏幕的模式 可选只MARGIN , CONTENT
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+//来设置阴影的宽度
+        menu.setShadowWidthRes(R.dimen.shadow_width);
+
+        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+// 设置渐入渐出效果的值
+        menu.setFadeDegree(0.35f);
+//把滑动菜单添加进所有的Activity中，可选值SLIDING_CONTENT ， SLIDING_WINDOW
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+//为侧滑菜单设置布局
+        menu.setMenu(R.layout.activity_main);
+//防止 侧滑 只可以点击这个才能侧滑
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+
+
+
+
     }
 
     @Override

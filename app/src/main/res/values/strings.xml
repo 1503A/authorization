@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">JCC</string>
+
+
+    <string name="app_name1">登录</string>
+    <string name="app_name2">新申请</string>
+    <string name="app_name3">已提交</string>
+    <string name="app_name4">注销</string>
+
+
 </resources>

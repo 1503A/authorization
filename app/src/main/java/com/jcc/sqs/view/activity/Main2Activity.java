@@ -1,11 +1,13 @@
 package com.jcc.sqs.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jcc.sqs.R;
@@ -17,7 +19,7 @@ import com.jcc.sqs.view.iview.LoginView;
 import com.jcc.sqs.view.iview.MsgView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
-public class Main2Activity extends AppCompatActivity implements View.OnClickListener,MsgView<MsgBean>,LoginView<LoginBean> {
+public class Main2Activity extends AppCompatActivity implements View.OnClickListener, MsgView<MsgBean>, LoginView<LoginBean> {
 
     private EditText edit_phone;
     private EditText edit_yzm;
@@ -25,6 +27,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     private MsgPresenter mPresenter;
     private Button bt_login;
     private LoginPresenter mLoginPresenter;
+    private TextView apply;
+    private TextView commit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +73,16 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         menu.setMenu(R.layout.activity_main);
 //防止 侧滑 只可以点击这个才能侧滑
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-
-
-
-
+        //申请跳转类
+        apply = (TextView) menu.findViewById(R.id.apply);
+        commit = (TextView) menu.findViewById(R.id.commit);
+        commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main2Activity.this, CommitActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -82,19 +92,18 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 mPresenter.getMsgData(edit_phone.getText().toString().trim());
                 break;
             case R.id.bt_login:
-                mLoginPresenter.getLoginData(edit_phone.getText().toString().trim(),"123456");
+                mLoginPresenter.getLoginData(edit_phone.getText().toString().trim(), "123456");
                 break;
         }
     }
 
 
-
     @Override
     public void getLoginViewSuc(LoginBean o) {
         String token = o.getData().getUserinfo().getToken();
-      // int status = o.getStatus();
-        Toast.makeText(Main2Activity.this, "登录成功"+token, Toast.LENGTH_SHORT).show();
-        Log.d("zzz",token);
+        // int status = o.getStatus();
+        Toast.makeText(Main2Activity.this, "登录成功" + token, Toast.LENGTH_SHORT).show();
+        Log.d("zzz", token);
     }
 
     @Override
@@ -105,8 +114,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     @Override
     public void getMsgSuc(MsgBean o) {
         String value = o.getMsg().toString();
-        Toast.makeText(Main2Activity.this, "获取成功"+value, Toast.LENGTH_SHORT).show();
-        edit_yzm.setText(value+"");
+        Toast.makeText(Main2Activity.this, "获取成功" + value, Toast.LENGTH_SHORT).show();
+        edit_yzm.setText(value + "");
     }
 
     @Override

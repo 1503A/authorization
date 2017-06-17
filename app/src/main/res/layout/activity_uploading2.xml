@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_uploading2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jcc.sqs.view.activity.CommitActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/uploading2_title" />
+
+    <TextView
+        android:id="@+id/name_uploading"
+        android:layout_width="78dp"
+        android:layout_height="24dp"
+        android:layout_below="@+id/include"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="姓名"
+        android:textColor="#8A000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/name_uploading"
+        android:text="身份证"
+        android:textColor="#8A000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/include"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:text="状态"
+        android:textColor="#8A000000"
+        android:textSize="16sp" />
+
+    <ListView
+        android:id="@+id/uploading2_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_uploading"
+        android:layout_marginTop="8dp" />
+</RelativeLayout>

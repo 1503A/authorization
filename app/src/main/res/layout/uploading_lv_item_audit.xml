@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/uploading2_item_lv_audit_name"
+        android:layout_width="78dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="16dp"
+        android:text="张小二"
+        android:textColor="#FF000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/uploading2_item_lv_audit_IDcode"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_toRightOf="@+id/uploading2_item_lv_audit_name"
+        android:text="123456789123456789"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/uploading2_item_lv_audit_state"
+        android:layout_width="70dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:text="审核中"
+        android:textColor="#FF000000" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/uploading2_item_lv_audit_name"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#1F000000" />
+</RelativeLayout>

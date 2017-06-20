@@ -16,5 +16,4 @@ public class BaseCommitPresenter<T extends Cview> {
     public void attachView(T cview){
         this.Cview=cview;
     }
-
 }

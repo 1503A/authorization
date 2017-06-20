@@ -3,7 +3,6 @@ package com.jcc.sqs.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +14,7 @@ import com.jcc.sqs.model.bean.LoginBean;
 import com.jcc.sqs.model.bean.MsgBean;
 import com.jcc.sqs.presenter.LoginPresenter;
 import com.jcc.sqs.presenter.MsgPresenter;
+import com.jcc.sqs.presenter.commit_presenter.CommitPresenter;
 import com.jcc.sqs.view.iview.LoginView;
 import com.jcc.sqs.view.iview.MsgView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -29,6 +29,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     private LoginPresenter mLoginPresenter;
     private TextView apply;
     private TextView commit;
+    private CommitPresenter commit1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         mPresenter.attachView(this);
         mLoginPresenter = new LoginPresenter();
         mLoginPresenter.attachView(this);
+
     }
 
     private void initView() {
@@ -102,8 +104,11 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     public void getLoginViewSuc(LoginBean o) {
         String token = o.getData().getUserinfo().getToken();
         // int status = o.getStatus();
-        Toast.makeText(Main2Activity.this, "登录成功" + token, Toast.LENGTH_SHORT).show();
-        Log.d("zzz", token);
+       /* Toast.makeText(Main2Activity.this, "登录成功" + token, Toast.LENGTH_SHORT).show();
+        Log.d("zzz", token);*/
+        Intent intent = new Intent();
+        intent.putExtra("token", token);
+        startActivity(intent);
     }
 
     @Override
@@ -122,4 +127,6 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     public void getMsgErr(String str, int code) {
 
     }
+
+
 }

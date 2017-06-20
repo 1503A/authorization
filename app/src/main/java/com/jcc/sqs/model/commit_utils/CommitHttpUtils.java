@@ -60,7 +60,7 @@ public class CommitHttpUtils {
         CommitDataFromService service = retrofit.create(CommitDataFromService.class);
         //实例化map
         Map map = new HashMap<String, String>();
-        map.put("token","205723f7a5cd818f40a2119e9844a9c4");
+        map.put("token","token");
         map.put("pageid",1);
         map.put("cuide",4);
         service.getState(map).

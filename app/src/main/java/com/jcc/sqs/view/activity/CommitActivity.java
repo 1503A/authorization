@@ -7,7 +7,6 @@ import android.widget.ListView;
 
 import com.jcc.sqs.R;
 import com.jcc.sqs.model.commitbean.CommitBean;
-import com.jcc.sqs.presenter.CommitAdapter;
 import com.jcc.sqs.presenter.commit_presenter.CommitPresenter;
 import com.jcc.sqs.view.iview.cview.CommitView;
 
@@ -26,7 +25,7 @@ public class CommitActivity extends AppCompatActivity implements CommitView<Comm
         setContentView(R.layout.activity_uploading2);
         initData();
         initView();
-        //拿到登录页传过来的token
+        //拿到登录页传过来的token,
         Intent intent = getIntent();
         token = intent.getStringExtra("token");
 

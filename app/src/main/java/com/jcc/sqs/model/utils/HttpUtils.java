@@ -2,6 +2,7 @@ package com.jcc.sqs.model.utils;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.jcc.sqs.BuildConfig;
+import com.jcc.sqs.model.bean.CommitBean;
 import com.jcc.sqs.model.bean.LoginBean;
 import com.jcc.sqs.model.bean.MsgBean;
 import com.jcc.sqs.model.data.DataFromService;
@@ -27,17 +28,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HttpUtils {
 
-    public static Retrofit create(String url){
+    public static Retrofit create(String url) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.readTimeout(10, TimeUnit.SECONDS);
-        builder.connectTimeout(9,TimeUnit.SECONDS);
+        builder.connectTimeout(9, TimeUnit.SECONDS);
 
-        if (BuildConfig.DEBUG){
+        if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(interceptor);
         }
-        return  new Retrofit.Builder()
+        return new Retrofit.Builder()
                 .baseUrl(url)
                 .client(builder.build())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -47,71 +48,108 @@ public class HttpUtils {
 
     }
 
-    public static  void  getMsgData(String phone, final CallBackDataF callBackDataF){
+    public static void getMsgData(String phone, final CallBackDataF callBackDataF) {
         Retrofit retrofit = create(UrLUtils.path);
         DataFromService service = retrofit.create(DataFromService.class);
-        Map<String, String> map=new HashMap<>();
-        map.put("phone",phone);
+        Map<String, String> map = new HashMap<>();
+        map.put("phone", phone);
         service.getMsg(map)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Observer<MsgBean>() {
-            @Override
-            public void onSubscribe(Disposable d) {
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<MsgBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(MsgBean value) {
-              callBackDataF.callbackF(value);
-            }
+                    @Override
+                    public void onNext(MsgBean value) {
+                        callBackDataF.callbackF(value);
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
 
     }
-   public static  void  getLoginData(String phone, String msg, final CallBackDataF callBackDataF){
-       Retrofit retrofit = create(UrLUtils.path);
-       DataFromService service = retrofit.create(DataFromService.class);
-       Map<String, String> map=new HashMap<>();
-       map.put("phone",phone);
-       map.put("verifyCode",msg);
-       service.getLogin(map)
-       .observeOn(AndroidSchedulers.mainThread())
-       .subscribeOn(Schedulers.io())
-       .subscribe(new Observer<LoginBean>() {
-           @Override
-           public void onSubscribe(Disposable d) {
 
-           }
+    public static void getLoginData(String phone, String msg, final CallBackDataF callBackDataF) {
+        Retrofit retrofit = create(UrLUtils.path);
+        DataFromService service = retrofit.create(DataFromService.class);
+        Map<String, String> map = new HashMap<>();
+        map.put("phone", phone);
+        map.put("verifyCode", msg);
+        service.getLogin(map)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<LoginBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-           @Override
-           public void onNext(LoginBean value) {
-                callBackDataF.callbackF(value);
-           }
+                    }
 
-           @Override
-           public void onError(Throwable e) {
+                    @Override
+                    public void onNext(LoginBean value) {
+                        callBackDataF.callbackF(value);
+                    }
 
-           }
+                    @Override
+                    public void onError(Throwable e) {
 
-           @Override
-           public void onComplete() {
+                    }
 
-           }
-       })
-       ;
-   }
+                    @Override
+                    public void onComplete() {
 
-    public  interface  CallBackDataF<T>{
-        void  callbackF(T t);
+                    }
+                })
+        ;
+    }
+
+    public static void getState(String token, String cuid, String pageid, final CallBackDataF callBackDataF) {
+        //获得Retrofit的对象
+        Retrofit retrofit = create(UrLUtils.path);
+        //代理者模式获得对象
+        DataFromService service = retrofit.create(DataFromService.class);
+//        Log.d("service",service.toString());
+        //实例化map
+        Map<String, String> map = new HashMap<>();
+        map.put("token", token);
+        map.put("cuid", cuid);
+        map.put("pageid", pageid);
+        service.getState(map)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<CommitBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(CommitBean value) {
+//                        Log.d("CommitHttpUtils", value.toString());
+                        callBackDataF.callbackF(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    public interface CallBackDataF<T> {
+        void callbackF(T t);
     }
 }

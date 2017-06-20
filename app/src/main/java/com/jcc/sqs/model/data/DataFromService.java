@@ -1,5 +1,6 @@
 package com.jcc.sqs.model.data;
 
+import com.jcc.sqs.model.bean.CommitBean;
 import com.jcc.sqs.model.bean.LoginBean;
 import com.jcc.sqs.model.bean.MsgBean;
 
@@ -26,5 +27,8 @@ public interface DataFromService {
     @POST("appapi/verify/login")
     Observable<LoginBean> getLogin(@FieldMap Map<String, String> options);
 
+    @FormUrlEncoded
+    @POST("appapi/apply/getList")
+    Observable<CommitBean> getState(@FieldMap Map<String, String> options);
 
 }

@@ -20,7 +20,6 @@ public class LoginPresenter extends BasePresenter<LoginView>{
                 }else {
                     getIView().getLoginViewErr("登录失败",400);
                 }
-
             }
         });
     }

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jcc.sqs.R;
-import com.jcc.sqs.model.commitbean.CommitBean;
+import com.jcc.sqs.model.bean.CommitBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class CommitAdapter extends BaseAdapter {
     private Context context;
-    private List<CommitBean.ListBean> list = new ArrayList<>();
+    private List<CommitBean.DataBean.ListBean> list = new ArrayList<>();
 
 
     public CommitAdapter(Context context) {
@@ -65,15 +65,15 @@ public class CommitAdapter extends BaseAdapter {
         }
         holder.nameText.setText(list.get(position).getCustomerName());
         holder.idText.setText(list.get(position).getIdCard());
-        int status = list.get(position).getStatus();
-        if (status == 0) {
+        String status=list.get(position).getStatus();
+        if (status .equals("0") ) {
             holder.stateImage.setVisibility(View.VISIBLE);
             holder.stateText.setText("等待");
-        } else if (status == 1) {
+        } else if (status .equals("1") ){
             holder.stateText.setText("审核中");
-        } else if (status == 2) {
+        } else if (status .equals("2") ){
             holder.stateText.setText("成功");
-        } else if (status == 3) {
+        } else if (status .equals("3")) {
             holder.stateText.setText("驳回");
             holder.stateImage.setVisibility(View.VISIBLE);
             holder.rejecText_rejec.setVisibility(View.VISIBLE);
@@ -84,15 +84,13 @@ public class CommitAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void Getdata(List<CommitBean.ListBean> list) {
+    public void Getdata(List<CommitBean.DataBean.ListBean> list) {
         if (list != null) {
             this.list = list;
 //            this.list.addAll(list);
         }
         notifyDataSetChanged();
     }
-
-
 }
 
 class viewHolder {

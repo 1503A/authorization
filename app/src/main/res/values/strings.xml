@@ -2,10 +2,10 @@
     <string name="app_name">JCC</string>
 
 
-    <string name="app_name1">登录</string>
-    <string name="app_name2">新申请</string>
-    <string name="app_name3">已提交</string>
-    <string name="app_name4">注销</string>
+    <string name="SlidingMenu_login">登录</string>
+    <string name="SlidingMenu_apply">新申请</string>
+    <string name="SlidingMenu_commit">已提交</string>
+    <string name="SlidingMenu_logout">注销</string>
 
 
 </resources>

@@ -11,24 +11,14 @@
         android:background="#ffe44040">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:text="@string/app_name1"
-            android:textColor="@color/colorAccent1"
-
-            android:textSize="20sp" />
+            android:text="@string/SlidingMenu_login"
+            style="@style/SlidingMenu_textview" />
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/image1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/SlidingMenu_img"
         android:layout_below="@id/rll"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="39dp"
         android:src="@mipmap/new_select" />
 
     <TextView
@@ -39,43 +29,24 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="16dp"
         android:layout_toRightOf="@id/image1"
-        android:text="@string/app_name2" />
-
+        android:text="@string/SlidingMenu_apply" />
 
     <ImageView
         android:id="@+id/image2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image1"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="39dp"
-        android:src="@mipmap/inbox_select" />
+        android:src="@mipmap/inbox_select"
+        style="@style/SlidingMenu_img" />
 
     <TextView
         android:id="@+id/commit"
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:layout_alignTop="@id/image2"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="16dp"
-        android:layout_toRightOf="@id/image2"
-        android:text="@string/app_name3" />
+        android:text="@string/SlidingMenu_commit"
+        style="@style/SlidingMenu_committext" />
 
     <ImageView
         android:id="@+id/image3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="16dp"
-        android:src="@mipmap/logout" />
+        android:src="@mipmap/logout"
+        style="@style/SlidingMenu_img_logout" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:layout_alignTop="@id/image3"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="16dp"
-        android:layout_toRightOf="@id/image3"
-        android:text="@string/app_name4" />
+        android:text="@string/SlidingMenu_logout"
+        style="@style/SlidingMenu_textview_logout" />
 </RelativeLayout>

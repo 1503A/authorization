@@ -8,4 +8,126 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SlidingMenu_img">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/image1</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">39dp</item>
+    </style>
+
+    <style name="SlidingMenu_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:textColor">@color/colorAccent1</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="SlidingMenu_committext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_alignTop">@id/image2</item>
+        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_toRightOf">@id/image2</item>
+    </style>
+
+    <style name="SlidingMenu_img_logout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">30dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+    </style>
+
+    <style name="SlidingMenu_textview_logout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_alignTop">@id/image3</item>
+        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_toRightOf">@id/image3</item>
+    </style>
+
+    <style name="main2_Logtext_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:layout_marginTop">153dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="main2_log_edit_phone">
+        <item name="android:layout_width">330dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginTop">34dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="main2_log_edit_yzm">
+        <item name="android:layout_width">186dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="main2_log_yzm_btn">
+        <item name="android:layout_width">93dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="main2_log_btn">
+        <item name="android:layout_width">330dp</item>
+        <item name="android:layout_height">58dp</item>
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="message_textview">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="message_img">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="message_error">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textColor">#FFE44D40</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="uploading2_textview">
+        <item name="android:layout_width">78dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_below">@+id/include</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#8A000000</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

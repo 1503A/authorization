@@ -12,36 +12,27 @@
 
     <TextView
         android:id="@+id/name_uploading"
-        android:layout_width="78dp"
-        android:layout_height="24dp"
-        android:layout_below="@+id/include"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:text="姓名"
-        android:textColor="#8A000000"
-        android:textSize="16sp" />
+        style="@style/uploading2_textview"
+        android:text="姓名" />
 
     <TextView
+        style="@style/message_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/include"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/name_uploading"
-        android:text="身份证"
-        android:textColor="#8A000000"
-        android:textSize="16sp" />
+        android:text="身份证" />
 
     <TextView
+        style="@style/message_textview"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/include"
         android:layout_marginRight="16dp"
         android:layout_marginTop="20dp"
-        android:text="状态"
-        android:textColor="#8A000000"
-        android:textSize="16sp" />
+        android:text="状态" />
 
     <ListView
         android:id="@+id/uploading2_lv"

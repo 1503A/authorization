@@ -8,4 +8,5 @@ package com.jcc.sqs.model.utils;
 
 public class UrLUtils {
     public static final String path="https://api.crs.alpha.yunlibeauty.com/";
+
 }

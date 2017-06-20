@@ -1,4 +1,4 @@
-package com.jcc.sqs.view.iview.cview;
+package com.jcc.sqs.view.iview;
 
 /**
  * autohor:谢兴张(asus)
@@ -6,7 +6,7 @@ package com.jcc.sqs.view.iview.cview;
  * effect:
  */
 
-public interface CommitView<T> extends Cview {
+public interface CommitView<T> extends IView {
 
     void getListViewData(T t);
 

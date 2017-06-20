@@ -14,7 +14,7 @@ import com.jcc.sqs.model.bean.LoginBean;
 import com.jcc.sqs.model.bean.MsgBean;
 import com.jcc.sqs.presenter.LoginPresenter;
 import com.jcc.sqs.presenter.MsgPresenter;
-import com.jcc.sqs.presenter.commit_presenter.CommitPresenter;
+import com.jcc.sqs.presenter.CommitPresenter;
 import com.jcc.sqs.view.iview.LoginView;
 import com.jcc.sqs.view.iview.MsgView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -58,6 +58,10 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         bt_login.setOnClickListener(this);
 
 
+        slidelIbrary();
+    }
+
+    private void slidelIbrary() {
         SlidingMenu menu = new SlidingMenu(this);
 //设置侧滑菜单的位置可选值LEFT , RIGHT , LEFT_RIGHT
         menu.setMode(SlidingMenu.LEFT);
